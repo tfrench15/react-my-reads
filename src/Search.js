@@ -66,7 +66,7 @@ class SearchForBooks extends Component {
 
 	render() {
 		const { books, query } = this.state
-		const { changeShelf } = this.props
+		const { changeShelf, book } = this.props
 		return (
 			<div className="search-books">
 			  <div className="search-books-bar">
