@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
-import { Link }, { Route } from 'react-router-dom'
+import { Link, Route } from 'react-router-dom'
+import escapeRegExp from 'escape-string-regexp'
+import sortBy from 'sort-by'
+import * as BooksAPI from './BooksAPI'
 
 
 class SearchForBooks extends Component {
 	state = {
-		query: ''
+		query: '',
+		books: []
 	}
 
 	updateQuery = (query) => {
@@ -12,6 +16,7 @@ class SearchForBooks extends Component {
 			query: query.trim()
 		})
 	}
+
 
 	render() {
 		return (
@@ -27,9 +32,11 @@ class SearchForBooks extends Component {
 						/>	
 					</div>
 				</div>
+					<div className="search-books-results">
+						<ol className="books-grid"></ol>
+					</div>
 			</div>
-
-			)
+		)
 	}
 }
 

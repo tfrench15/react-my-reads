@@ -1,10 +1,17 @@
-import React, { Component } from 'react'
-
-class Bookshelf extends Component {
-	render() {
-		return (
-			)
+	
+const bookShelves = [
+	{ 
+	  id: "currentlyReading",
+	  title: "Currently Reading"
+	},
+	{ 
+	  id: "wantToRead",
+	  title: "Want to Read"
+	},
+	{
+	  id: "read",
+	  title: "Read"
 	}
-}
+]
 
-export default Bookshelf
+export default bookShelves
