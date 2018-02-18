@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Book from './Book'
 import { Link, Route } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import sortBy from 'sort-by'
@@ -25,7 +26,7 @@ class SearchForBooks extends Component {
 
 	getBooksOnShelf = (searchResults, booksOnShelf) => {
 		return searchResults.map((result) => {
-			let index = booksOnShelf.findIndex(book) => {
+			let index = booksOnShelf.findIndex((book) => {
 				return book.id === result.id
 			})
 			if (index !== -1) {
@@ -34,13 +35,14 @@ class SearchForBooks extends Component {
 				result.shelf = 'none'
 			}
 			return result
-		}
+		})
 	}
 
 	updateQuery = (query) => {
 		this.setState({
 			query: query.trim(),
-		}
+		})
+
 		if (query) {
 			BooksAPI.search(query).then((results) => {
 				if (!results.error) {
@@ -80,7 +82,16 @@ class SearchForBooks extends Component {
 			    </div>
 			  </div>
 			  <div className="search-books-results">
-			    <ol className="books-grid"></ol>
+			    <ol className="books-grid">
+			      {books.map((book) => (
+			      	<li key={book.id}>
+			      	  <Book
+			      	    book={book}
+			      	    changeShelf={changeShelf}
+			      	  />
+			      	</li>
+			      ))}
+			    </ol>
 			  </div>
 			</div>
 		)
@@ -88,21 +99,3 @@ class SearchForBooks extends Component {
 }
 
 export default SearchForBooks
-
-<div className="search-books">
-			  <div className="search-books-bar">
-				<Link to="/" className="close-search">Close</Link>
-				<div className="search-books-input-wrapper">
-				  <input 
-					type="text"
-					placeholder="Search by title or author"
-					value={query}	
-					onChange={(event) => this.updateQuery(event.target.value)}
-				  />	
-				</div>
-			  </div>
-				  <div className="search-books-results">
-					  <ol className="books-grid"></ol>
-
-					</div>
-			</div>

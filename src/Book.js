@@ -4,9 +4,10 @@ import PropTypes from 'prop-types'
 class Book extends Component {
 	static propTypes = {
 			book: PropTypes.object.isRequired
+		}
 
 	render() {
-		{ book, changeShelf } = this.props
+		const { book, changeShelf } = this.props
 		
 		return (
 			<div className="book">
