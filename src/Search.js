@@ -45,7 +45,7 @@ class SearchForBooks extends Component {
 		if (query) {
 			BooksAPI.search(query).then((results) => {
 				if (!results.error) {
-					results = this.matchBooks(results, this.props.booksOnShelf)
+					results = this.getBooksOnShelf(results, this.props.booksOnShelf)
 					this.setState({
 						books: results
 					})
@@ -57,7 +57,7 @@ class SearchForBooks extends Component {
 	}
 
 	componentWillReceiveProps(nextProps) {
-		const results = this.matchBooks(this.state.books, nextProps.booksOnShelf)
+		const results = this.getBooksOnShelf(this.state.books, nextProps.booksOnShelf)
 		this.setState({
 			books: results
 		})
