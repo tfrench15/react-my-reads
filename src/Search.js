@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import Book from './Book'
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import sortBy from 'sort-by'
 import * as BooksAPI from './BooksAPI'
 
 /*

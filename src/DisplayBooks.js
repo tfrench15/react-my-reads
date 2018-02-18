@@ -20,13 +20,15 @@ class DisplayBooks extends Component {
 			  </div>
 			  <div className="list-books-content">
 			    <div>
-			      <Bookshelf
-			        key={bookshelf.id}
-			        books={books}
-			        id={bookshelf.id}
-			        name={bookshelf.name}
-			        changeShelf={changeShelf} 
-			      />
+			      {bookshelves.map((bookshelf) => (
+			      	<Bookshelf
+			          key={bookshelf.id}
+			          books={books}
+			          id={bookshelf.id}
+			          name={bookshelf.name}
+			          changeShelf={changeShelf} 
+			        />
+			      ))}
 			    </div>
 			  </div>
 			  <div className="open-search">
