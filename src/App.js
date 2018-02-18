@@ -3,7 +3,6 @@ import Book from './Book'
 import DisplayBooks from './DisplayBooks'
 import { Link, Route } from 'react-router-dom'
 import SearchForBooks from './Search'
-import Bookshelf from './Bookshelf'
 import * as BooksAPI from './BooksAPI'
 import './App.css'
 
@@ -35,7 +34,6 @@ class BooksApp extends React.Component {
     }
   ]
 
-
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
       this.setState({ books })
@@ -45,8 +43,8 @@ class BooksApp extends React.Component {
   changeShelf = (book, shelf) => {
     BooksAPI.update(book, shelf).then(() => {
       book.shelf = shelf;
-      this.setState((state) => {
-        state.books.filter((b) => b.id !== book.id).concat([ book ])
+      this.setState({
+        books: this.state.books.filter((b) => b.id !== book.id).concat([ book ])
       })
     })
   }
