@@ -28,9 +28,9 @@ class DisplayBooks extends Component {
 			                ))}
 			             </ol>
 			            </div>
-			           </div>
-			           ))}
-			        </div>
+			          </div>
+			        ))}
+			      </div>
 			    </div>
 			  <div className="open-search">
 			    <Link to="/search">Search for Books</Link>
