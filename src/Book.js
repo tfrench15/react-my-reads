@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 class Book extends Component {
 	static propTypes = {
-			book: PropTypes.object.isrequired
+			book: PropTypes.object.isRequired
 
 	render() {
 		{ book, changeShelf } = this.props
