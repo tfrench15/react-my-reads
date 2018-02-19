@@ -18,11 +18,6 @@ class SearchForBooks extends Component {
 		books: []
 	}
 
-	static propTypes = {
-		changeShelf: PropTypes.func.isRequired,
-		booksOnShelf: PropTypes.array.isRequired
-	}
-
 	getBooksOnShelf = (searchResults, booksOnShelf) => {
 		return searchResults.map((result) => {
 			let index = booksOnShelf.findIndex((book) => {
