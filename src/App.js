@@ -12,6 +12,9 @@ The BooksApp Component is the main app.  It
 allows a user to move books between shelves
 and search for new titles.
 
+Attribution: I received help on this component from my 
+friend Cosmo Wolfe.  (@cozmo on GitHub).
+
 */
 
 class BooksApp extends React.Component {

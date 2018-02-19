@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import Book from './Book'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 import * as BooksAPI from './BooksAPI'
 
 /*
@@ -9,6 +8,9 @@ import * as BooksAPI from './BooksAPI'
 The SearchForBooks Component controls the `/search` page.
 It allows a user to search for books and renders an array 
 of books that match that query.
+
+Attribution: I received help on this component from my 
+friend Cosmo Wolfe.  (@cozmo on GitHub).
 
 */
 

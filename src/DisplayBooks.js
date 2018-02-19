@@ -2,6 +2,16 @@ import React, { Component } from 'react'
 import Book from './Book'
 import { Link } from 'react-router-dom'
 
+/*
+
+The DisplayBooks component takes in bookshelves
+and renders the books in the correct shelf.
+
+Attribution: I received help on this component from my 
+friend Cosmo Wolfe.  (@cozmo on GitHub).
+
+*/
+
 class DisplayBooks extends Component {
 	render() {
 		return (

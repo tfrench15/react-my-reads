@@ -1,18 +1,25 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+
+/*
+
+The Book component does what you expect - it
+renders books to the page.
+
+Attribution: I received help on this component from my 
+friend Cosmo Wolfe.  (@cozmo on GitHub).
+
+*/
 
 class Book extends Component {
 	render() {
-		const { book, changeShelf } = this.props
-		
 		return (
 			<div className="book">
 			  <div className="book-top">
-			    <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${book.imageLinks.thumbnail})` }}></div>
+			    <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url(${this.props.book.imageLinks.thumbnail})` }}></div>
 			    <div className="book-shelf-changer">
 			      <select
-			      	value={book.shelf}
-			      	onChange={(event) => changeShelf(book, event.target.value)}
+			      	value={this.props.book.shelf}
+			      	onChange={(event) => this.props.changeShelf(this.props.book, event.target.value)}
 			      >
                     <option value="none" disabled>Move to...</option>
                     <option value="currentlyReading">Currently Reading</option>
@@ -22,8 +29,8 @@ class Book extends Component {
                   </select>
                 </div>
               </div>
-              <div className="book-title">{book.title}</div>
-              <div className="book-authors">{book.authors ? book.authors.join(', ') : '' }</div>
+              <div className="book-title">{this.props.book.title}</div>
+              <div className="book-authors">{this.props.book.authors ? this.props.book.authors.join(', ') : '' }</div>
             </div>
 		)
 	}
