@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Bookshelf from './Bookshelf'
 import Book from './Book'
 import { Link } from 'react-router-dom'
 
